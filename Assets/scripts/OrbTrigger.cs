@@ -7,9 +7,9 @@ public class OrbTrigger : MonoBehaviour
     public GameObject orb;
     public GameObject player;
 
-    private void OnCollisionEnter(Collision collisionInfo)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collisionInfo.collider.tag == "trigger")
+        if (other.CompareTag("trigger"))
         {
             orb.SetActive(false);
             Debug.Log("is this working?");
