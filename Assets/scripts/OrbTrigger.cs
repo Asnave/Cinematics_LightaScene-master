@@ -11,7 +11,8 @@ public class OrbTrigger : MonoBehaviour
     public GameObject Light1;
     public GameObject Light2;
     public GameObject player;
-
+    public AudioSource soundToPlay;
+    public bool OneTimeTrigger = false;
 
     private void Start()
     {
@@ -25,7 +26,8 @@ public class OrbTrigger : MonoBehaviour
             orb.SetActive(false);
             Light2.SetActive(true);
             Debug.Log("is this working?");
-            
+          
+
         }
 
         if (other.CompareTag("trigger2"))
@@ -33,7 +35,9 @@ public class OrbTrigger : MonoBehaviour
             orb2.SetActive(false);
             orb3.SetActive(false);
             Light1.SetActive(true);
+            soundToPlay.Play();
             Debug.Log("is this working?");
+           
 
         }
        
