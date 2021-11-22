@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class PlayerTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public PlayableDirector timeline;
+
+    public bool OneTimeTrigger = false;
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        timeline.Play();
+        OneTimeTrigger = true;
+
+         if (OneTimeTrigger == true)
+         {
+             Destroy(this.gameObject);
+         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
